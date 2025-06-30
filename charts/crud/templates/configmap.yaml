@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fraeym-crud-env-data
+  namespace: {{ .Release.Namespace }}
+data:
+  .env: |
+    {{- if .Values.debug }}
+    APP_ENV=development
+    LOG_LEVEL=debug
+    {{- else }}
+    APP_ENV=production
+    LOG_LEVEL=info
+    LOG_FORMAT=json
+    {{- end }}
+    
+    HTTP_REQUEST_BODY_LIMIT=10
+    CORS_ALLOW_ORIGINS=*
+
+    SYNC_CLIENT_ADDRESS=sync.{{ .Release.Namespace }}.svc.cluster.local:9000
+    SYNC_CLIENT_APP_PREFIX=crud
+
+    STREAMS_CLIENT_ADDRESS=streams.{{ .Release.Namespace }}.svc.cluster.local:9000
+    STREAMS_CLIENT_GROUP_ID=crud
+
+    PROJECTIONS_CLIENT_ADDRESS=projections.{{ .Release.Namespace }}.svc.cluster.local:9000
+
+    IMGPROXY_URL=http://fraeym-imgproxy.{{ .Release.Namespace }}.svc.cluster.local
+
+    S3_BUCKET={{ .Values.s3.bucket }}

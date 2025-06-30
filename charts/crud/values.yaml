@@ -1,0 +1,14 @@
+image: ghcr.io/fraym/crud
+version: 0.30.2
+debug: false
+replicas: 2
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 100Mi
+  limits:
+    memory: 500Mi
+
+autoscaling:
+  enabled: true
