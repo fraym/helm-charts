@@ -1,6 +1,27 @@
 apiVersion: v1
 entries:
+  streams:
+  - apiVersion: v2
+    appVersion: 6.3.0
+    created: "2025-06-30T16:24:42.151405386Z"
+    description: 'Fraeym Streams: event sourcing and pub/sub'
+    digest: 4d9e6d618c9244fe1fd1926164cd70715ed3e611493c0daa50f959cd5faa39bc
+    name: streams
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/streams-0.1.0/streams-0.1.0.tgz
+    version: 0.1.0
   sync:
+  - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2025-06-30T16:24:42.272061668Z"
+    description: 'Fraeym Sync: locking for distributed services'
+    digest: 957f3cda7f94e38ecf28a72c515ee40f98010415bdc7e71e4391a10149adfadd
+    name: sync
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/sync-0.1.1/sync-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 0.5.0
     created: "2025-06-30T15:58:08.73782747Z"
@@ -11,4 +32,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-30T15:58:08.737836036Z"
+generated: "2025-06-30T16:24:42.272068852Z"
