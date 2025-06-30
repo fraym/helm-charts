@@ -1,0 +1,15 @@
+image: ghcr.io/fraym/projections
+version: 0.35.3
+debug: false
+replicas: 2
+
+resources:
+  requests:
+    cpu: 300m
+    memory: 150Mi
+  limits:
+    memory: 1500Mi
+
+autoscaling:
+  enabled: true
+

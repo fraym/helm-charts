@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projections
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: projections
+  annotations:
+    secret.reloader.stakater.com/auto: "true"
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: projections
+  template:
+    metadata:
+      labels:
+        app: projections
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "3000"
+        linkerd.io/inject: enabled
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- if .Values.overrides }}
+        checksum/overrides: {{ include (print $.Template.BasePath "/overrides.yaml") . | sha256sum }}
+        {{- end }}
+    spec:
+      volumes:
+        - name: env
+          configMap:
+            name: fraeym-projections-env-data
+        {{- if .Values.overrides }}
+        - name: overrides
+          configMap:
+            name: fraeym-projections-overrides
+        {{- end }}
+      imagePullSecrets:
+        - name: fraeym-projections-dockerconfigjson
+      containers:
+        - name: projections
+          image: {{ .Values.image }}:v{{ .Values.version }}
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: fraeym-projections-config
+            - secretRef:
+                name: fraeym-projections-postgresql-config
+          ports:
+            - containerPort: 3000
+            - containerPort: 3001
+            - containerPort: 9000
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 1
+            periodSeconds: 10
+            failureThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          volumeMounts:
+            - name: env
+              mountPath: /.env
+              subPath: .env
+              readOnly: true
+            {{- if .Values.overrides }}
+            - name: overrides
+              mountPath: /overrides.yaml
+              subPath: overrides.yaml
+              readOnly: true
+            {{- end }}
+          resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              memory: {{ .Values.resources.limits.memory }}
+              {{- if .Values.resources.limits.cpu }}
+              cpu: {{ .Values.resources.limits.cpu }}
+              {{- end }}
