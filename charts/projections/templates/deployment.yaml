@@ -44,8 +44,6 @@ spec:
           envFrom:
             - secretRef:
                 name: fraeym-projections-config
-            - secretRef:
-                name: fraeym-projections-postgresql-config
           ports:
             - containerPort: 3000
             - containerPort: 3001

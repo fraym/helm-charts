@@ -22,18 +22,6 @@ helm repo update
 helm install sync fraeym/sync
 ```
 
-### Upgrade the Chart
-
-```bash
-helm upgrade sync fraeym/sync --values custom-values.yaml
-```
-
-### Uninstall the Chart
-
-```bash
-helm uninstall sync
-```
-
 ## Configuration
 
 The following table lists the configurable parameters of the sync chart and their default values.

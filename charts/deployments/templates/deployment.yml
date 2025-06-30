@@ -36,8 +36,6 @@ spec:
           envFrom:
             - secretRef:
                 name: fraeym-deployments-config
-            - secretRef:
-                name: fraeym-postgresql-config
           ports:
             - containerPort: 3000
             - containerPort: 9000

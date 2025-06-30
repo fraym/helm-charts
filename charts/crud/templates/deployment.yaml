@@ -36,10 +36,6 @@ spec:
           envFrom:
             - secretRef:
                 name: fraeym-crud-config
-            - secretRef:
-                name: fraeym-crud-s3-config
-            - secretRef:
-                name: fraeym-crud-postgresql-config
           ports:
             - containerPort: 3000
             - containerPort: 3001

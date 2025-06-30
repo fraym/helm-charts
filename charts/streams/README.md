@@ -43,15 +43,6 @@ The following table lists the configurable parameters of the streams chart and t
 | `resources.limits.memory`   | Memory resource limits         | `500Mi` |
 | `resources.limits.cpu`      | CPU resource limits (optional) |         |
 
-### S3 Configuration
-
-| Parameter            | Description                   | Default |
-| -------------------- | ----------------------------- | ------- |
-| `s3.accessKeyId`     | S3 access key ID              |         |
-| `s3.secretAccessKey` | S3 secret access key          |         |
-| `s3.endpoint`        | S3 endpoint URL               |         |
-| `s3.ssl`             | Enable SSL for S3 connections | `false` |
-
 ### GitHub Configuration
 
 This is used to load the private images from the Fraeym GitHub container registry.
