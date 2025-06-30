@@ -1,0 +1,10 @@
+image: ghcr.io/fraym/deployments
+version: 0.23.3
+debug: false
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 50Mi
+  limits:
+    memory: 500Mi

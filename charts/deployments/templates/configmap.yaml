@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: fraeym-streams-env-data
+  name: fraeym-deployments-env-data
   namespace: {{ .Release.Namespace }}
 data:
   .env: |
@@ -15,6 +15,7 @@ data:
     {{- end }}
     
     CORS_ALLOW_ORIGINS=*
-    
-    SYNC_CLIENT_ADDRESS=sync.{{ .Release.Namespace }}.svc.cluster.local:9000
-    SYNC_CLIENT_APP_PREFIX=streams
+
+    AUTH_CLIENT_ADDRESS=auth.{{ .Release.Namespace }}.svc.cluster.local:9000
+    CRUD_CLIENT_ADDRESS=crud.{{ .Release.Namespace }}.svc.cluster.local:9000
+    PROJECTIONS_CLIENT_ADDRESS=projections.{{ .Release.Namespace }}.svc.cluster.local:9000

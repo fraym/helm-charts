@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: sync-env-data
+  name: fraeym-sync-env-data
   namespace: {{ .Release.Namespace }}
 data:
   .env: |

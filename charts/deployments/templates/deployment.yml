@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: streams
+  name: deployments
   namespace: {{ .Release.Namespace }}
   labels:
-    app: streams
+    app: deployments
   annotations:
     secret.reloader.stakater.com/auto: "true"
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: 1
   selector:
     matchLabels:
-      app: streams
+      app: deployments
   template:
     metadata:
       labels:
-        app: streams
+        app: deployments
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/path: "/metrics"
@@ -26,23 +26,20 @@ spec:
       volumes:
         - name: env
           configMap:
-            name: fraeym-streams-env-data
+            name: fraeym-deployments-env-data
       imagePullSecrets:
-        - name: fraeym-streams-dockerconfigjson
+        - name: fraeym-deployments-dockerconfigjson
       containers:
-        - name: streams
+        - name: deployments
           image: {{ .Values.image }}:v{{ .Values.version }}
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: fraeym-streams-config
+                name: fraeym-deployments-config
             - secretRef:
-                name: fraeym-streams-s3-config
-            - secretRef:
-                name: fraeym-streams-postgresql-config
+                name: fraeym-postgresql-config
           ports:
             - containerPort: 3000
-            - containerPort: 3001
             - containerPort: 9000
           readinessProbe:
             httpGet:

@@ -24,7 +24,7 @@ spec:
       volumes:
         - name: env
           configMap:
-            name: sync-env-data
+            name: fraeym-sync-env-data
       imagePullSecrets:
         - name: fraeym-sync-dockerconfigjson
       containers:
