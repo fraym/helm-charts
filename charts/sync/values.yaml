@@ -1,0 +1,10 @@
+image: ghcr.io/fraym/sync
+version: 0.5.0
+debug: false
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 50Mi
+  limits:
+    memory: 500Mi
