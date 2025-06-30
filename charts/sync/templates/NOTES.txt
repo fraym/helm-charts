@@ -1,0 +1,3 @@
+Thank you for installing Fraeym Sync.
+
+To get more information on how to use Fraeym Sync, please have a look at our docs: https://docs.freym.becklyn.app/docs/services/sync/introduction

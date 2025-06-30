@@ -1,0 +1,17 @@
+image: ghcr.io/fraym/streams
+version: 6.3.0
+debug: false
+replicas: 2
+
+stage:
+  name: prod
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 100Mi
+  limits:
+    memory: 500Mi
+
+autoscaling:
+  enabled: true
