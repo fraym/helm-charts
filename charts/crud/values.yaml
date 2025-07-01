@@ -48,3 +48,28 @@ s3:
   secretAccessKey:
   endpoint:
   bucket:
+
+imgproxy:
+  features:
+    security:
+      maxSrcResolution: 50.0
+      allowedSources: s3://
+      allowOrigin: "*"
+    aws:
+      enabled: true
+    urlSignature:
+      enabled: false
+  compression:
+    avifSpeed: 8
+  logging:
+    level: warn
+  resources:
+    deployment:
+      replicas:
+        default: 2
+        minCount: 2
+        maxCount: 10
+      resources:
+        requests:
+          cpu: 50m
+          memory: 150Mi

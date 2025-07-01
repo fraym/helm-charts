@@ -61,6 +61,14 @@ This is used to load the private images from the Fraeym GitHub container registr
 | `github.username` | GitHub username for registry |         |
 | `github.token`    | GitHub token for registry    |         |
 
+### Imgproxy Configuration
+
+| Parameter                               | Description          | Default |
+| --------------------------------------- | -------------------- | ------- |
+| `imgproxy.features.aws.s3Endpoint`      | S3 endpoint URL      |         |
+| `imgproxy.features.aws.accessKeyId`     | S3 access key ID     |         |
+| `imgproxy.features.aws.secretAccessKey` | S3 secret access key |         |
+
 ## Usage
 
 For detailed usage instructions and API documentation, refer to the [Fraym CRUD Documentation](https://docs.freym.becklyn.app/docs/services/crud/introduction).
