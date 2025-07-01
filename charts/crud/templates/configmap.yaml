@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   .env: |
-    {{- if .Values.debug | default .Values.global.debug }}
+    {{- if .Values.debug }}
     APP_ENV=development
     LOG_LEVEL=debug
     {{- else }}
@@ -27,6 +27,6 @@ data:
 
     IMGPROXY_URL=http://fraeym-imgproxy.{{ .Release.Namespace }}.svc.cluster.local
 
-    S3_BUCKET={{ .Values.s3.bucket | default .Values.global.s3.bucket }}
-    S3_ENDPOINT={{ .Values.s3.endpoint | default .Values.global.s3.endpoint }}
-    S3_SSL={{ .Values.s3.ssl | default .Values.global.s3.ssl }}
+    S3_BUCKET={{ .Values.s3.bucket }}
+    S3_ENDPOINT={{ .Values.s3.endpoint }}
+    S3_SSL={{ .Values.s3.ssl }}

@@ -8,19 +8,3 @@ resources:
     memory: 50Mi
   limits:
     memory: 500Mi
-
-global:
-  debug: false
-  github:
-    username:
-    token:
-  apiToken:
-  postgres:
-    connection:
-
-github:
-  username:
-  token:
-
-postgres:
-  connection:

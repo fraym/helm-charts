@@ -15,19 +15,5 @@ resources:
 
 autoscaling:
   enabled: true
-  minReplicas:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
-
-global:
-  debug: false
-  github:
-    username:
-    token:
-  auth:
-    secret:
-
-github:
-  username:
-  token:
-

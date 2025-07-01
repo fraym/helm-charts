@@ -1,6 +1,7 @@
 image: ghcr.io/fraym/projections
 version: 0.35.3
 replicas: 2
+debug: false
 
 resources:
   requests:
@@ -11,26 +12,5 @@ resources:
 
 autoscaling:
   enabled: true
-  minReplicas:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
-
-global:
-  debug: false
-  github:
-    username:
-    token:
-  auth:
-    secret:
-  postgres:
-    connection:
-
-github:
-  username:
-  token:
-
-auth:
-  secret:
-
-postgres:
-  connection:
