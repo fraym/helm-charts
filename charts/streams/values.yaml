@@ -1,6 +1,5 @@
 image: ghcr.io/fraym/streams
 version: 6.3.0
-debug: false
 replicas: 2
 
 resources:
@@ -12,3 +11,26 @@ resources:
 
 autoscaling:
   enabled: true
+  minReplicas:
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+global:
+  debug: false
+  github:
+    username:
+    token:
+  auth:
+    secret:
+  postgres:
+    connection:
+
+github:
+  username:
+  token:
+
+auth:
+  secret:
+
+postgres:
+  connection:

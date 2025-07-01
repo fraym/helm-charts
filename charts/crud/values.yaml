@@ -12,3 +12,39 @@ resources:
 
 autoscaling:
   enabled: true
+  minReplicas:
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+global:
+  debug: false
+  github:
+    username:
+    token:
+  auth:
+    secret:
+  postgres:
+    connection:
+  s3:
+    ssl: false
+    accessKeyId:
+    secretAccessKey:
+    endpoint:
+    bucket:
+
+github:
+  username:
+  token:
+
+auth:
+  secret:
+
+postgres:
+  connection:
+
+s3:
+  ssl:
+  accessKeyId:
+  secretAccessKey:
+  endpoint:
+  bucket:

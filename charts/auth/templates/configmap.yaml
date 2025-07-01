@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   .env: |
-    {{- if .Values.debug }}
+    {{- if .Values.debug | default .Values.global.debug }}
     APP_ENV=development
     LOG_LEVEL=debug
     {{- else }}

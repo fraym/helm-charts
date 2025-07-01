@@ -13,14 +13,14 @@ spec:
     kind: Deployment
     name: auth
   minReplicas: {{ .Values.autoscaling.minReplicas | default .Values.replicas }}
-  maxReplicas: {{ .Values.autoscaling.maxReplicas | default 10 }}
+  maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: {{ .Values.autoscaling.targetCPUUtilizationPercentage | default 80 }}
+          averageUtilization: {{ .Values.autoscaling.targetCPUUtilizationPercentage }}
     {{- if .Values.autoscaling.targetMemoryUtilizationPercentage }}
     - type: Resource
       resource:
