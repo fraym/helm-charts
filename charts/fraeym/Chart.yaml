@@ -1,5 +1,5 @@
 apiVersion: v2
-name: deployments
+name: fraeym
 description: "Fraeym: The entire Fraeym system"
 type: application
 version: 0.1.0 # Chart version
