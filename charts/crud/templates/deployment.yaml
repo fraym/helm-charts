@@ -27,15 +27,17 @@ spec:
         - name: env
           configMap:
             name: fraeym-crud-env-data
-      imagePullSecrets:
-        - name: fraeym-crud-dockerconfigjson
       containers:
         - name: crud
           image: {{ .Values.image }}:v{{ .Values.version }}
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: fraeym-crud-config
+                name: fraeym-auth-config
+            - secretRef:
+                name: fraeym-postgres-config
+            - secretRef:
+                name: fraeym-s3-config
           ports:
             - containerPort: 3000
             - containerPort: 3001

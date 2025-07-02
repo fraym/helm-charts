@@ -27,8 +27,6 @@ spec:
         - name: env
           configMap:
             name: fraeym-auth-env-data
-      imagePullSecrets:
-        - name: fraeym-auth-dockerconfigjson
       containers:
         - name: auth
           image: {{ .Values.image }}:v{{ .Values.version }}

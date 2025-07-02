@@ -27,8 +27,6 @@ spec:
         - name: env
           configMap:
             name: fraeym-deployments-env-data
-      imagePullSecrets:
-        - name: fraeym-deployments-dockerconfigjson
       containers:
         - name: deployments
           image: {{ .Values.image }}:v{{ .Values.version }}
@@ -36,6 +34,8 @@ spec:
           envFrom:
             - secretRef:
                 name: fraeym-deployments-config
+            - secretRef:
+                name: fraeym-postgres-config
           ports:
             - containerPort: 3000
             - containerPort: 9000

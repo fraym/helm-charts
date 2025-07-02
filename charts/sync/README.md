@@ -8,6 +8,13 @@ Fraym Sync provides locking capabilities for distributed services, ensuring data
 
 ## Installation
 
+### Private Image Registry Configuration
+
+The docker image is pulled from the Fraeym GitHub container registry.
+
+Please follow this documentation on how to add the docker credentials to your cluster:
+[Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+
 ### Add the Helm Repository
 
 ```bash
@@ -26,23 +33,18 @@ helm install sync fraeym/sync
 
 The following table lists the configurable parameters of the sync chart and their default values.
 
-| Parameter                   | Description                                 | Default |
-| --------------------------- | ------------------------------------------- | ------- |
-| `debug`                     | Enable debug mode (development environment) | `false` |
-| `resources.requests.cpu`    | CPU resource requests                       | `100m`  |
-| `resources.requests.memory` | Memory resource requests                    | `50Mi`  |
-| `resources.limits.memory`   | Memory resource limits                      | `500Mi` |
-| `resources.limits.cpu`      | CPU resource limits (optional)              |         |
+| Parameter | Description                                 | Default |
+| --------- | ------------------------------------------- | ------- |
+| `debug`   | Enable debug mode (development environment) | `false` |
 
-### GitHub Configuration
+### Resource Configuration
 
-This is used to load the private images from the Fraeym GitHub container registry.
-
-| Parameter         | Description                  | Default |
-| ----------------- | ---------------------------- | ------- |
-| `github.username` | GitHub username for registry |         |
-| `github.token`    | GitHub token for registry    |         |
-
+| Parameter                   | Description                    | Default |
+| --------------------------- | ------------------------------ | ------- |
+| `resources.requests.cpu`    | CPU resource requests          | `100m`  |
+| `resources.requests.memory` | Memory resource requests       | `50Mi` |
+| `resources.limits.memory`   | Memory resource limits         | `500Mi` |
+| `resources.limits.cpu`      | CPU resource limits (optional) |         |
 ## Usage
 
 For detailed usage instructions and API documentation, refer to the [Fraym Sync Documentation](https://docs.freym.becklyn.app/docs/services/sync/introduction).

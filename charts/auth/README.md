@@ -8,6 +8,27 @@ Fraym Auth provides authentication and authorization capabilities, enabling secu
 
 ## Installation
 
+### Private Image Registry Configuration
+
+The docker image is pulled from the Fraeym GitHub container registry.
+
+Please follow this documentation on how to add the docker credentials to your cluster:
+[Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+
+### Required secrets
+
+The following secrets are required. Please add them to your cluster before installing the chart.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-auth-config
+  namespace: {{ .Release.Namespace }}
+data:
+  AUTH_SECRET: {{ .Values.auth.secret | b64enc }}
+  AUTH_SECRET_INITIAL_PW: {{ .Values.initialPasswordSecret | b64enc }}
+```
 ### Add the Helm Repository
 
 ```bash
@@ -42,15 +63,6 @@ The following table lists the configurable parameters of the auth chart and thei
 | `resources.requests.memory` | Memory resource requests       | `100Mi` |
 | `resources.limits.memory`   | Memory resource limits         | `500Mi` |
 | `resources.limits.cpu`      | CPU resource limits (optional) |         |
-
-### GitHub Configuration
-
-This is used to load the private images from the Fraeym GitHub container registry.
-
-| Parameter         | Description                  | Default |
-| ----------------- | ---------------------------- | ------- |
-| `github.username` | GitHub username for registry |         |
-| `github.token`    | GitHub token for registry    |         |
 
 ## Usage
 

@@ -35,15 +35,15 @@ spec:
           configMap:
             name: fraeym-projections-overrides
         {{- end }}
-      imagePullSecrets:
-        - name: fraeym-projections-dockerconfigjson
       containers:
         - name: projections
           image: {{ .Values.image }}:v{{ .Values.version }}
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: fraeym-projections-config
+                name: fraeym-auth-config
+            - secretRef:
+                name: fraeym-postgres-config
           ports:
             - containerPort: 3000
             - containerPort: 3001

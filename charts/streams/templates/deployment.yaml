@@ -27,15 +27,15 @@ spec:
         - name: env
           configMap:
             name: fraeym-streams-env-data
-      imagePullSecrets:
-        - name: fraeym-streams-dockerconfigjson
       containers:
         - name: streams
           image: {{ .Values.image }}:v{{ .Values.version }}
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: fraeym-streams-config
+                name: fraeym-auth-config
+            - secretRef:
+                name: fraeym-postgres-config
           ports:
             - containerPort: 3000
             - containerPort: 3001

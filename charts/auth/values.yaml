@@ -3,9 +3,6 @@ version: 0.15.1
 debug: false
 replicas: 2
 
-secret:
-initialPasswordSecret:
-
 resources:
   requests:
     cpu: 50m

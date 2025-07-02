@@ -8,6 +8,35 @@ Fraym Deployments provides schema deployment capabilities for the Fraym platform
 
 ## Installation
 
+### Private Image Registry Configuration
+
+The docker image is pulled from the Fraeym GitHub container registry.
+
+Please follow this documentation on how to add the docker credentials to your cluster:
+[Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+
+### Required secrets
+
+The following secrets are required. Please add them to your cluster before installing the chart.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-deployments-config
+  namespace: {{ .Release.Namespace }}
+data:
+  API_TOKEN: {{ .Values.apiToken | b64enc }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-postgres-config
+  namespace: {{ .Release.Namespace }}
+data:
+  POSTGRES_CONNECTION: {{ .Values.postgres.connection | b64enc }}
+```
+
 ### Add the Helm Repository
 
 ```bash
@@ -26,11 +55,9 @@ helm install deployments fraeym/deployments
 
 The following table lists the configurable parameters of the deployments chart and their default values.
 
-| Parameter             | Description                                 | Default |
-| --------------------- | ------------------------------------------- | ------- |
-| `debug`               | Enable debug mode (development environment) | `false` |
-| `postgres.connection` | PostgreSQL connection string                |         |
-| `apiToken`            | Deployments Api Token                       |         |
+| Parameter | Description                                 | Default |
+| --------- | ------------------------------------------- | ------- |
+| `debug`   | Enable debug mode (development environment) | `false` |
 
 ### Resource Configuration
 
@@ -40,15 +67,6 @@ The following table lists the configurable parameters of the deployments chart a
 | `resources.requests.memory` | Memory resource requests       | `50Mi`  |
 | `resources.limits.memory`   | Memory resource limits         | `500Mi` |
 | `resources.limits.cpu`      | CPU resource limits (optional) |         |
-
-## Usage
-
-This is used to load the private images from the Fraeym GitHub container registry.
-
-| Parameter         | Description                  | Default |
-| ----------------- | ---------------------------- | ------- |
-| `github.username` | GitHub username for registry |         |
-| `github.token`    | GitHub token for registry    |         |
 
 ## Usage
 

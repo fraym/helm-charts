@@ -30,6 +30,8 @@ imgproxy:
   logging:
     level: warn
   resources:
+    addSecrets:
+      - fraeym-imgproxy-secrets
     deployment:
       replicas:
         default: 2
