@@ -81,3 +81,14 @@ spec:
               {{- if .Values.resources.limits.cpu }}
               cpu: {{ .Values.resources.limits.cpu }}
               {{- end }}
+      imagePullSecrets:
+        - name: regcred
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: projections
+                topologyKey: "kubernetes.io/hostname"

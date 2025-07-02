@@ -66,3 +66,5 @@ spec:
               {{- if .Values.resources.limits.cpu }}
               cpu: {{ .Values.resources.limits.cpu }}
               {{- end }}
+      imagePullSecrets:
+        - name: regcred
