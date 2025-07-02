@@ -44,15 +44,6 @@ metadata:
 data:
   S3_ACCESS_KEY: {{ .Values.s3.accessKeyId | b64enc }}
   S3_SECRET_KEY: {{ .Values.s3.secretAccessKey | b64enc }}
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: fraeym-imgproxy-secrets
-  namespace: {{ .Release.Namespace }}
-data:
-  AWS_ACCESS_KEY_ID: {{ .Values.s3.accessKeyId | b64enc }}
-  AWS_SECRET_ACCESS_KEY: {{ .Values.s3.secretAccessKey | b64enc }}
 ```
 
 ### Add the Helm Repository
@@ -94,12 +85,6 @@ The following table lists the configurable parameters of the crud chart and thei
 | ------------- | ----------------------------- | ------- |
 | `s3.endpoint` | S3 endpoint URL               |         |
 | `s3.ssl`      | Enable SSL for S3 connections | `false` |
-
-### Imgproxy Configuration
-
-| Parameter                               | Description          | Default |
-| --------------------------------------- | -------------------- | ------- |
-| `imgproxy.features.aws.s3Endpoint`      | S3 endpoint URL      |         |
 
 ## Usage
 

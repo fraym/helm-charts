@@ -14,30 +14,3 @@ autoscaling:
   enabled: true
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
-
-imgproxy:
-  features:
-    security:
-      maxSrcResolution: 50.0
-      allowedSources: s3://
-      allowOrigin: "*"
-    aws:
-      enabled: true
-    urlSignature:
-      enabled: false
-  compression:
-    avifSpeed: 8
-  logging:
-    level: warn
-  resources:
-    addSecrets:
-      - fraeym-imgproxy-secrets
-    deployment:
-      replicas:
-        default: 2
-        minCount: 2
-        maxCount: 10
-      resources:
-        requests:
-          cpu: 50m
-          memory: 150Mi
