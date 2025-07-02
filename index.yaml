@@ -74,6 +74,16 @@ entries:
   crud:
   - apiVersion: v2
     appVersion: 0.32.0
+    created: "2025-07-02T15:34:37.369997461Z"
+    description: 'Fraeym CRUD: Easily create a CRUD API for your data'
+    digest: ed04a7170902c458da6146966073035e2a87e051e2fe8793bb3399e724a73095
+    name: crud
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/crud-0.1.9/crud-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 0.32.0
     created: "2025-07-02T14:35:05.013486833Z"
     dependencies:
     - name: imgproxy
@@ -482,4 +492,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-02T14:35:05.151301823Z"
+generated: "2025-07-02T15:34:37.370111574Z"
