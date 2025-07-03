@@ -33,9 +33,10 @@ helm install sync fraeym/sync
 
 The following table lists the configurable parameters of the sync chart and their default values.
 
-| Parameter | Description                                 | Default |
-| --------- | ------------------------------------------- | ------- |
-| `debug`   | Enable debug mode (development environment) | `false` |
+| Parameter | Description                                 | Default       |
+| --------- | ------------------------------------------- | ------------- |
+| `debug`   | Enable debug mode (development environment) | `false`       |
+| `appEnv`  | Application environment                     | `development` |
 
 ### Resource Configuration
 

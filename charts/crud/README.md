@@ -64,11 +64,12 @@ helm install crud fraeym/crud
 
 The following table lists the configurable parameters of the crud chart and their default values.
 
-| Parameter             | Description                                 | Default |
-| --------------------- | ------------------------------------------- | ------- |
-| `debug`               | Enable debug mode (development environment) | `false` |
-| `replicas`            | Number of replicas                          | `2`     |
-| `autoscaling.enabled` | Enable horizontal pod autoscaling           | `true`  |
+| Parameter             | Description                                 | Default       |
+| --------------------- | ------------------------------------------- | ------------- |
+| `debug`               | Enable debug mode (development environment) | `false`       |
+| `replicas`            | Number of replicas                          | `2`           |
+| `autoscaling.enabled` | Enable horizontal pod autoscaling           | `true`        |
+| `appEnv`              | Application environment                     | `development` |
 
 ### Resource Configuration
 

@@ -55,9 +55,10 @@ helm install deployments fraeym/deployments
 
 The following table lists the configurable parameters of the deployments chart and their default values.
 
-| Parameter | Description                                 | Default |
-| --------- | ------------------------------------------- | ------- |
-| `debug`   | Enable debug mode (development environment) | `false` |
+| Parameter | Description                                 | Default       |
+| --------- | ------------------------------------------- | ------------- |
+| `debug`   | Enable debug mode (development environment) | `false`       |
+| `appEnv`  | Application environment                     | `development` |
 
 ### Resource Configuration
 

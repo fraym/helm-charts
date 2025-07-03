@@ -47,13 +47,14 @@ helm install auth fraeym/auth
 
 The following table lists the configurable parameters of the auth chart and their default values.
 
-| Parameter               | Description                                 | Default |
-| ----------------------- | ------------------------------------------- | ------- |
-| `debug`                 | Enable debug mode (development environment) | `false` |
-| `replicas`              | Number of replicas                          | `2`     |
-| `autoscaling.enabled`   | Enable horizontal pod autoscaling           | `true`  |
-| `initialPasswordSecret` | Initial password secret key                 |         |
-| `secret`                | Authentication secret key                   |         |
+| Parameter               | Description                                 | Default       |
+| ----------------------- | ------------------------------------------- | -------------|
+| `debug`                 | Enable debug mode (development environment) | `false`       |
+| `replicas`              | Number of replicas                          | `2`           |
+| `autoscaling.enabled`   | Enable horizontal pod autoscaling           | `true`        |
+| `initialPasswordSecret` | Initial password secret key                 |               |
+| `secret`                | Authentication secret key                   |               |
+| `appEnv`                | Application environment                     | `development` |
 
 ### Resource Configuration
 

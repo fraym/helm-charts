@@ -5,11 +5,10 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   .env: |
+    APP_ENV={{ .Values.appEnv | default "development" }}
     {{- if .Values.debug }}
-    APP_ENV=development
     LOG_LEVEL=debug
     {{- else }}
-    APP_ENV=production
     LOG_LEVEL=info
     LOG_FORMAT=json
     {{- end }}
