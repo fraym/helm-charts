@@ -5,7 +5,7 @@ debug: false
 
 resources:
   requests:
-    cpu: 100m
+    cpu: 500m
     memory: 100Mi
   limits:
     memory: 500Mi
@@ -13,4 +13,4 @@ resources:
 autoscaling:
   enabled: true
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 100
