@@ -10,13 +10,16 @@ spec:
   ports:
     - name: http
       protocol: TCP
+      appProtocol: http
       port: 80
       targetPort: 3000
     - name: private
       protocol: TCP
+      appProtocol: http
       port: 81
       targetPort: 3001
     - name: grpc
       protocol: TCP
+      appProtocol: grpc
       port: 9000
       targetPort: 9000

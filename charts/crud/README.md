@@ -90,3 +90,7 @@ The following table lists the configurable parameters of the crud chart and thei
 ## Usage
 
 For detailed usage instructions and API documentation, refer to the [Fraym CRUD Documentation](https://docs.freym.becklyn.app/docs/services/crud/introduction).
+
+Note: In order for the image APIs to work you need a [imgproxy](https://github.com/imgproxy/imgproxy-helm) installation.
+
+Use the `fullnameOverride` and the `nameOverride` parameter to override the service name to `fraeym-imgproxy`.
