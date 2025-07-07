@@ -71,32 +71,12 @@ The following table lists the configurable parameters of the deployments chart a
 
 ### Secret Configuration
 
+You can configure the name of the secrets by setting the `secretName` object.
+
 | Parameter                | Description                    | Default                     |
 | ------------------------ | ------------------------------ | --------------------------- |
 | `secretName.deployments` | Name of the deployments secret | `fraeym-deployments-config` |
 | `secretName.postgres`    | Name of the postgres secret    | `fraeym-postgres-config`    |
-
-#### Auth secret example
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: fraeym-deployments-config
-data:
-  API_TOKEN: {{ .Values.deployments.apiToken | b64enc }}
-```
-
-#### Postgres secret example
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: fraeym-postgres-config
-data:
-  POSTGRES_CONNECTION: {{ .Values.postgres.connection | b64enc }}
-```
 
 ## Usage
 

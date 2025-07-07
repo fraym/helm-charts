@@ -67,21 +67,11 @@ The following table lists the configurable parameters of the auth chart and thei
 
 ### Secret Configuration
 
+You can configure the name of the secret by setting the `secretName` object.
+
 | Parameter             | Description                 | Default                  |
 | --------------------- | --------------------------- | ------------------------ |
 | `secretName.auth`     | Name of the auth secret     | `fraeym-auth-config`     |
-
-#### Auth secret example
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: fraeym-auth-config
-data:
-  AUTH_SECRET: {{ .Values.auth.secret | b64enc }}
-  AUTH_SECRET_INITIAL_PW: {{ .Values.auth.initialPasswordSecret | b64enc }}
-```
 
 ## Usage
 

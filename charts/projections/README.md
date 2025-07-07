@@ -73,33 +73,12 @@ The following table lists the configurable parameters of the projections chart a
 
 ### Secret Configuration
 
+You can configure the name of the secrets by setting the `secretName` object.
+
 | Parameter             | Description                 | Default                  |
 | --------------------- | --------------------------- | ------------------------ |
 | `secretName.auth`     | Name of the auth secret     | `fraeym-auth-config`     |
 | `secretName.postgres` | Name of the postgres secret | `fraeym-postgres-config` |
-
-#### Auth secret example
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: fraeym-auth-config
-data:
-  AUTH_SECRET: {{ .Values.auth.secret | b64enc }}
-  AUTH_SECRET_INITIAL_PW: {{ .Values.auth.initialPasswordSecret | b64enc }}
-```
-
-#### Postgres secret example
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: fraeym-postgres-config
-data:
-  POSTGRES_CONNECTION: {{ .Values.postgres.connection | b64enc }}
-```
 
 ## Usage
 
