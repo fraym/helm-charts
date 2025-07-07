@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   auth:
   - apiVersion: v2
+    appVersion: 0.15.2
+    created: "2025-07-07T15:30:05.746953458Z"
+    description: 'Fraeym Auth: Authentication and Authorization'
+    digest: fa6e3f4db1826d899852dfe1d144209ef6272630c3ce23b68419cf1d73c73358
+    name: auth
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/auth-0.1.12/auth-0.1.12.tgz
+    version: 0.1.12
+  - apiVersion: v2
     appVersion: 0.15.1
     created: "2025-07-07T12:25:23.723502252Z"
     description: 'Fraeym Auth: Authentication and Authorization'
@@ -796,4 +806,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T14:46:47.770434672Z"
+generated: "2025-07-07T15:30:05.747148901Z"
