@@ -425,6 +425,16 @@ entries:
     version: 0.1.1
   projections:
   - apiVersion: v2
+    appVersion: 0.35.10
+    created: "2025-07-07T14:46:47.770218366Z"
+    description: 'Fraeym Projections: Projections for event sourced applications'
+    digest: 237744c8983f3e490ebcd8e576887b192dff6b4bcd0659381403a3d34f65d225
+    name: projections
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/projections-0.1.16/projections-0.1.16.tgz
+    version: 0.1.16
+  - apiVersion: v2
     appVersion: 0.35.9
     created: "2025-07-07T14:19:10.023541251Z"
     description: 'Fraeym Projections: Projections for event sourced applications'
@@ -786,4 +796,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-07T14:19:10.023886002Z"
+generated: "2025-07-07T14:46:47.770434672Z"
