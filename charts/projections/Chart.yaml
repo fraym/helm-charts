@@ -2,5 +2,5 @@ apiVersion: v2
 name: projections
 description: "Fraeym Projections: Projections for event sourced applications"
 type: application
-version: 0.1.14 # Chart version
-appVersion: "0.35.8" # Fraeym Projections version
+version: 0.1.15 # Chart version
+appVersion: "0.35.9" # Fraeym Projections version
