@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/auth
-version: 0.15.1
+version: 0.15.2
 debug: false
 replicas: 2
 
