@@ -65,6 +65,24 @@ The following table lists the configurable parameters of the auth chart and thei
 | `resources.limits.memory`   | Memory resource limits         | `500Mi` |
 | `resources.limits.cpu`      | CPU resource limits (optional) |         |
 
+### Secret Configuration
+
+| Parameter             | Description                 | Default                  |
+| --------------------- | --------------------------- | ------------------------ |
+| `secretName.auth`     | Name of the auth secret     | `fraeym-auth-config`     |
+
+#### Auth secret example
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-auth-config
+data:
+  AUTH_SECRET: {{ .Values.auth.secret | b64enc }}
+  AUTH_SECRET_INITIAL_PW: {{ .Values.auth.initialPasswordSecret | b64enc }}
+```
+
 ## Usage
 
 For detailed usage instructions and API documentation, refer to the [Fraym Auth Documentation](https://docs.freym.becklyn.app/docs/services/auth/introduction).

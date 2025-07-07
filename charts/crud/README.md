@@ -87,6 +87,49 @@ The following table lists the configurable parameters of the crud chart and thei
 | `s3.endpoint` | S3 endpoint URL               |         |
 | `s3.ssl`      | Enable SSL for S3 connections | `false` |
 
+### Secret Configuration
+
+| Parameter             | Description                 | Default                  |
+| --------------------- | --------------------------- | ------------------------ |
+| `secretName.auth`     | Name of the auth secret     | `fraeym-auth-config`     |
+| `secretName.postgres` | Name of the postgres secret | `fraeym-postgres-config` |
+| `secretName.s3`       | Name of the s3 secret       | `fraeym-s3-config`       |
+
+#### Auth secret example
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-auth-config
+data:
+  AUTH_SECRET: {{ .Values.auth.secret | b64enc }}
+  AUTH_SECRET_INITIAL_PW: {{ .Values.auth.initialPasswordSecret | b64enc }}
+```
+
+#### Postgres secret example
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-postgres-config
+data:
+  POSTGRES_CONNECTION: {{ .Values.postgres.connection | b64enc }}
+```
+
+#### S3 secret example
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-s3-config
+data:
+  S3_ACCESS_KEY: {{ .Values.s3.accessKeyId | b64enc }}
+  S3_SECRET_KEY: {{ .Values.s3.secretAccessKey | b64enc }}
+```
+
 ## Usage
 
 For detailed usage instructions and API documentation, refer to the [Fraym CRUD Documentation](https://docs.freym.becklyn.app/docs/services/crud/introduction).

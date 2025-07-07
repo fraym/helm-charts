@@ -69,6 +69,35 @@ The following table lists the configurable parameters of the deployments chart a
 | `resources.limits.memory`   | Memory resource limits         | `500Mi` |
 | `resources.limits.cpu`      | CPU resource limits (optional) |         |
 
+### Secret Configuration
+
+| Parameter                | Description                    | Default                     |
+| ------------------------ | ------------------------------ | --------------------------- |
+| `secretName.deployments` | Name of the deployments secret | `fraeym-deployments-config` |
+| `secretName.postgres`    | Name of the postgres secret    | `fraeym-postgres-config`    |
+
+#### Auth secret example
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-deployments-config
+data:
+  API_TOKEN: {{ .Values.deployments.apiToken | b64enc }}
+```
+
+#### Postgres secret example
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-postgres-config
+data:
+  POSTGRES_CONNECTION: {{ .Values.postgres.connection | b64enc }}
+```
+
 ## Usage
 
 For detailed usage instructions and API documentation, refer to the [Fraym Deployments Documentation](https://docs.freym.becklyn.app/docs/services/deployments/introduction).

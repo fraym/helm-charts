@@ -33,11 +33,11 @@ spec:
           imagePullPolicy: Always
           envFrom:
             - secretRef:
-                name: fraeym-auth-config
+                name: {{ .Values.secretName.auth | default "fraeym-auth-config" }}
             - secretRef:
-                name: fraeym-postgres-config
+                name: {{ .Values.secretName.postgres | default "fraeym-postgres-config" }}
             - secretRef:
-                name: fraeym-s3-config
+                name: {{ .Values.secretName.s3 | default "fraeym-s3-config" }}
           ports:
             - containerPort: 3000
             - containerPort: 3001
