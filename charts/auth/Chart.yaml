@@ -2,5 +2,5 @@ apiVersion: v2
 name: auth
 description: "Fraeym Auth: Authentication and Authorization"
 type: application
-version: 0.1.12 # Chart version
-appVersion: "0.15.2" # Auth CRUD version
+version: 0.1.13 # Chart version
+appVersion: "0.15.3" # Auth CRUD version
