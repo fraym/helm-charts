@@ -143,6 +143,16 @@ entries:
     version: 0.1.0
   crud:
   - apiVersion: v2
+    appVersion: 0.32.6
+    created: "2025-07-16T09:38:18.483046482Z"
+    description: 'Fraeym CRUD: Easily create a CRUD API for your data'
+    digest: 5038d006ae9da751bd76d90fca73bbfa9c3842b5c3789467ea4a459696d9c721
+    name: crud
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/crud-0.1.19/crud-0.1.19.tgz
+    version: 0.1.19
+  - apiVersion: v2
     appVersion: 0.32.5
     created: "2025-07-15T12:28:14.982687224Z"
     description: 'Fraeym CRUD: Easily create a CRUD API for your data'
@@ -866,4 +876,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-15T14:48:24.283240546Z"
+generated: "2025-07-16T09:38:18.483385885Z"
