@@ -354,6 +354,16 @@ entries:
     version: 0.1.1
   deployments:
   - apiVersion: v2
+    appVersion: 0.24.2
+    created: "2025-07-18T11:55:09.208983682Z"
+    description: 'Fraeym Deployments: Schema Deployments for Fraeym'
+    digest: 7f68e01ea2fe34c9508f77bd0f824771e34cee97e22ce17e4633ed5f6f0b84e9
+    name: deployments
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/deployments-0.1.14/deployments-0.1.14.tgz
+    version: 0.1.14
+  - apiVersion: v2
     appVersion: 0.24.1
     created: "2025-07-18T10:16:46.887599017Z"
     description: 'Fraeym Deployments: Schema Deployments for Fraeym'
@@ -896,4 +906,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-18T10:16:46.887794455Z"
+generated: "2025-07-18T11:55:09.209422347Z"
