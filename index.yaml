@@ -143,6 +143,16 @@ entries:
     version: 0.1.0
   crud:
   - apiVersion: v2
+    appVersion: 0.33.1
+    created: "2025-07-24T14:31:28.737650077Z"
+    description: 'Fraeym CRUD: Easily create a CRUD API for your data'
+    digest: 88f8ef280fe3fa90ad9604676ceb3f0884a87a475861507a3042a818526e27a5
+    name: crud
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/crud-0.1.21/crud-0.1.21.tgz
+    version: 0.1.21
+  - apiVersion: v2
     appVersion: 0.33.0
     created: "2025-07-24T08:20:43.281668941Z"
     description: 'Fraeym CRUD: Easily create a CRUD API for your data'
@@ -514,6 +524,16 @@ entries:
     - https://github.com/fraym/helm-charts/releases/download/deployments-0.1.1/deployments-0.1.1.tgz
     version: 0.1.1
   projections:
+  - apiVersion: v2
+    appVersion: 0.36.1
+    created: "2025-07-24T14:31:28.886669459Z"
+    description: 'Fraeym Projections: Projections for event sourced applications'
+    digest: 84bbce2fa92eb1283b6bfe2871380bf26976015a2f5f44749fe824fb82d0f419
+    name: projections
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/projections-0.1.20/projections-0.1.20.tgz
+    version: 0.1.20
   - apiVersion: v2
     appVersion: 0.36.0
     created: "2025-07-24T08:20:43.401938221Z"
@@ -936,4 +956,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-24T08:20:43.40232986Z"
+generated: "2025-07-24T14:31:28.887105243Z"
