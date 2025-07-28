@@ -1,9 +1,9 @@
 {{- if .Values.overrides }}
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
   name: fraeym-projections-overrides
   namespace: {{ .Release.Namespace }}
 data:
-  overrides.yaml: | {{ .Values.overrides | nindent 4 }}
+  overrides.yaml: {{ .Values.overrides | toYaml | b64enc }}
 {{- end }}

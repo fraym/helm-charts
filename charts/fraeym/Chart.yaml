@@ -22,7 +22,7 @@ dependencies:
   - name: projections
     alias: projections
     condition: projections.create
-    version: 0.1.21
+    version: 0.1.22
     repository: file://../projections
   - name: streams
     alias: streams

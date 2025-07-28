@@ -32,8 +32,8 @@ spec:
             name: fraeym-projections-env-data
         {{- if .Values.overrides }}
         - name: overrides
-          configMap:
-            name: fraeym-projections-overrides
+          secret:
+            secretName: fraeym-projections-overrides
         {{- end }}
       initContainers:
         - name: wait-for-dependencies
