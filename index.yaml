@@ -565,6 +565,51 @@ entries:
     version: 0.1.1
   fraeym:
   - apiVersion: v2
+    created: "2025-07-28T13:57:16.288584092Z"
+    dependencies:
+    - alias: auth
+      condition: auth.create
+      name: auth
+      repository: file://../auth
+      version: 0.1.15
+    - alias: crud
+      condition: crud.create
+      name: crud
+      repository: file://../crud
+      version: 0.1.22
+    - alias: deployments
+      condition: deployments.create
+      name: deployments
+      repository: file://../deployments
+      version: 0.1.16
+    - alias: projections
+      condition: projections.create
+      name: projections
+      repository: file://../projections
+      version: 0.1.21
+    - alias: streams
+      condition: streams.create
+      name: streams
+      repository: file://../streams
+      version: 0.1.14
+    - alias: sync
+      condition: sync.create
+      name: sync
+      repository: file://../sync
+      version: 0.1.9
+    - alias: imgproxy
+      condition: imgproxy.create
+      name: imgproxy
+      repository: https://helm.imgproxy.net/
+      version: 0.8.34
+    description: 'Fraeym: All Freaym services in one chart'
+    digest: d8b9971aec1ca1de9bcd29b6b64900c848ef6cc1ea07af244fe98ab29c47b41a
+    name: fraeym
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/fraeym-0.2.2/fraeym-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
     created: "2025-07-28T12:05:39.932203705Z"
     dependencies:
     - alias: auth
@@ -1072,4 +1117,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-28T12:05:39.932415431Z"
+generated: "2025-07-28T13:57:16.288791339Z"
