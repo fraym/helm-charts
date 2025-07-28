@@ -8,32 +8,32 @@ dependencies:
     alias: auth
     condition: auth.create
     version: 0.1.15
-    repository: file://../charts/auth
+    repository: file://../auth
   - name: crud
     alias: crud
     condition: crud.create
     version: 0.1.22
-    repository: file://../charts/crud
+    repository: file://../crud
   - name: deployments
     alias: deployments
     condition: deployments.create
     version: 0.1.16
-    repository: file://../charts/deployments
+    repository: file://../deployments
   - name: projections
     alias: projections
     condition: projections.create
     version: 0.1.21
-    repository: file://../charts/projections
+    repository: file://../projections
   - name: streams
     alias: streams
     condition: streams.create
     version: 0.1.14
-    repository: file://../charts/streams
+    repository: file://../streams
   - name: sync
     alias: sync
     condition: sync.create
     version: 0.1.9
-    repository: file://../charts/sync
+    repository: file://../sync
   - name: imgproxy
     alias: imgproxy
     condition: imgproxy.create

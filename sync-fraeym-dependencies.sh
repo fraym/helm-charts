@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SERVICES_DIR="./charts"
-UMBRELLA_DIR="./fraeym"
+UMBRELLA_DIR="./charts/fraeym"
 UMBRELLA_CHART="$UMBRELLA_DIR/Chart.yaml"
 
 echo "📦 Syncing dependencies in umbrella chart..."
@@ -18,6 +18,11 @@ DEPS_BLOCK="dependencies:\n"
 for CHART in "$SERVICES_DIR"/*; do
   if [[ -d "$CHART" && -f "$CHART/Chart.yaml" ]]; then
     NAME=$(yq '.name' "$CHART/Chart.yaml")
+    
+    if [[ "$NAME" == "fraeym" ]]; then
+      continue
+    fi
+    
     VERSION=$(yq '.version' "$CHART/Chart.yaml")
 
     echo "  - Found $NAME@$VERSION"
@@ -26,7 +31,7 @@ for CHART in "$SERVICES_DIR"/*; do
     DEPS_BLOCK+="    alias: $NAME\n"
     DEPS_BLOCK+="    condition: $NAME.create\n"
     DEPS_BLOCK+="    version: $VERSION\n"
-    DEPS_BLOCK+="    repository: file://../charts/$NAME\n"
+    DEPS_BLOCK+="    repository: file://../$NAME\n"
   fi
 done
 
