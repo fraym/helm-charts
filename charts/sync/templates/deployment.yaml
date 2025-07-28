@@ -28,7 +28,7 @@ spec:
       containers:
         - name: sync
           image: {{ .Values.image }}:v{{ .Values.version }}
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
             - containerPort: 9000

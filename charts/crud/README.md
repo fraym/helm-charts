@@ -46,6 +46,19 @@ data:
   S3_SECRET_KEY: {{ .Values.s3.secretAccessKey | b64enc }}
 ```
 
+### Required Cluster Role
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fraeym-wait-for-pods
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "services", "deployments"]
+    verbs: ["get", "list", "watch"]
+```
+
 ### Add the Helm Repository
 
 ```bash

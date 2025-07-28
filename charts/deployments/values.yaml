@@ -8,3 +8,7 @@ resources:
     memory: 50Mi
   limits:
     memory: 500Mi
+
+secretName:
+  postgres: fraeym-postgres-config
+  deployments: fraeym-deployments-config

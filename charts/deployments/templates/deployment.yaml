@@ -30,12 +30,12 @@ spec:
       containers:
         - name: deployments
           image: {{ .Values.image }}:v{{ .Values.version }}
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
-                name: {{ .Values.secretName.deployments | default "fraeym-deployments-config" }}
+                name: {{ .Values.secretName.deployments }}
             - secretRef:
-                name: {{ .Values.secretName.postgres | default "fraeym-postgres-config" }}
+                name: {{ .Values.secretName.postgres }}
           ports:
             - containerPort: 3000
             - containerPort: 9000

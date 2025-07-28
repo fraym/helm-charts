@@ -1,0 +1,61 @@
+sync:
+  create: true
+
+streams:
+  create: true
+
+projections:
+  create: true
+
+crud:
+  create: true
+
+deployments:
+  create: true
+
+auth:
+  create: true
+
+traefik:
+  ingress:
+    create: false
+    baseDomain: demo.fraeym.io
+
+imgproxy:
+  create: true
+  
+  nameOverride: fraeym-imgproxy
+
+  fullnameOverride: fraeym-imgproxy
+
+  features:
+    security:
+      maxSrcResolution: '50.0'
+      allowedSources: s3://
+      allowOrigin: "*"
+    aws:
+      enabled: true
+      s3endpoint: http://localhost:80
+    urlSignature:
+      enabled: false
+    
+  compression:
+    avifSpeed: 8
+
+  logging:
+    level: warn
+
+  resources:
+    addSecrets:
+      - fraeym-imgproxy-secrets
+    deployment:
+      replicas:
+        default: 2
+        minCount: 2
+        maxCount: 10
+      requests:
+        cpu: 50m
+        memory: 150Mi
+
+regcred:
+  create: false

@@ -27,17 +27,25 @@ spec:
         - name: env
           configMap:
             name: fraeym-crud-env-data
+      initContainers:
+        - name: wait-for-dependencies
+          image: ghcr.io/groundnuty/k8s-wait-for:v1.6
+          imagePullPolicy: IfNotPresent
+          args:
+            - "pod"
+            - "-lapp in (sync, streams, projections)"
+
       containers:
         - name: crud
           image: {{ .Values.image }}:v{{ .Values.version }}
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
-                name: {{ .Values.secretName.auth | default "fraeym-auth-config" }}
+                name: {{ .Values.secretName.auth }}
             - secretRef:
-                name: {{ .Values.secretName.postgres | default "fraeym-postgres-config" }}
+                name: {{ .Values.secretName.postgres }}
             - secretRef:
-                name: {{ .Values.secretName.s3 | default "fraeym-s3-config" }}
+                name: {{ .Values.secretName.s3 }}
           ports:
             - containerPort: 3000
             - containerPort: 3001

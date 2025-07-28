@@ -1,0 +1,24 @@
+dependencies:
+- name: auth
+  repository: file://../charts/auth
+  version: 0.1.15
+- name: crud
+  repository: file://../charts/crud
+  version: 0.1.22
+- name: deployments
+  repository: file://../charts/deployments
+  version: 0.1.16
+- name: projections
+  repository: file://../charts/projections
+  version: 0.1.21
+- name: streams
+  repository: file://../charts/streams
+  version: 0.1.14
+- name: sync
+  repository: file://../charts/sync
+  version: 0.1.9
+- name: imgproxy
+  repository: https://helm.imgproxy.net/
+  version: 0.8.34
+digest: sha256:ace4676d6b6188458e71b064b7e6938131cb7aa349fefa09b5c2b3bf0d991818
+generated: "2025-07-28T11:45:47.946099+02:00"

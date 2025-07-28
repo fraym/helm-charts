@@ -27,13 +27,20 @@ spec:
         - name: env
           configMap:
             name: fraeym-auth-env-data
+      initContainers:
+        - name: wait-for-dependencies
+          image: ghcr.io/groundnuty/k8s-wait-for:v1.6
+          imagePullPolicy: IfNotPresent
+          args:
+            - "pod"
+            - "-lapp in (sync, streams, crud, deployments)"
       containers:
         - name: auth
           image: {{ .Values.image }}:v{{ .Values.version }}
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
-                name: {{ .Values.secretName.auth | default "fraeym-auth-config" }}
+                name: {{ .Values.secretName.auth }}
           ports:
             - containerPort: 3000
             - containerPort: 3001

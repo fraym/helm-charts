@@ -10,6 +10,10 @@ resources:
   limits:
     memory: 500Mi
 
+secretName:
+  auth: fraeym-auth-config
+  postgres: fraeym-postgres-config
+
 autoscaling:
   enabled: true
   maxReplicas: 10

@@ -1,0 +1,41 @@
+apiVersion: v2
+name: fraeym
+description: "Fraeym: All Freaym services in one chart"
+type: application
+version: 0.2.0 # Chart version
+dependencies:
+  - name: auth
+    alias: auth
+    condition: auth.create
+    version: 0.1.15
+    repository: file://../charts/auth
+  - name: crud
+    alias: crud
+    condition: crud.create
+    version: 0.1.22
+    repository: file://../charts/crud
+  - name: deployments
+    alias: deployments
+    condition: deployments.create
+    version: 0.1.16
+    repository: file://../charts/deployments
+  - name: projections
+    alias: projections
+    condition: projections.create
+    version: 0.1.21
+    repository: file://../charts/projections
+  - name: streams
+    alias: streams
+    condition: streams.create
+    version: 0.1.14
+    repository: file://../charts/streams
+  - name: sync
+    alias: sync
+    condition: sync.create
+    version: 0.1.9
+    repository: file://../charts/sync
+  - name: imgproxy
+    alias: imgproxy
+    condition: imgproxy.create
+    version: 0.8.34
+    repository: https://helm.imgproxy.net/

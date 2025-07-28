@@ -18,3 +18,12 @@ To install the fraeym chart:
 To uninstall the chart:
 
     helm uninstall fraeym
+
+
+## Development
+
+To update the dependencies in the fraeym chart, run:
+
+    make sync
+
+Please make sure to install [yq](https://github.com/mikefarah/yq?tab=readme-ov-file#install) before you run it.

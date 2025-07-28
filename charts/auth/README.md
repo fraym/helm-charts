@@ -29,6 +29,20 @@ data:
   AUTH_SECRET: {{ .Values.auth.secret | b64enc }}
   AUTH_SECRET_INITIAL_PW: {{ .Values.initialPasswordSecret | b64enc }}
 ```
+
+### Required Cluster Role
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fraeym-wait-for-pods
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "services", "deployments"]
+    verbs: ["get", "list", "watch"]
+```
+
 ### Add the Helm Repository
 
 ```bash

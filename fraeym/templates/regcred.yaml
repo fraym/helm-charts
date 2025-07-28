@@ -1,0 +1,10 @@
+{{- if .Values.regcred.create }}
+kind: Secret
+type: kubernetes.io/dockerconfigjson
+apiVersion: v1
+metadata:
+  name: regcred
+  namespace: {{ .Release.Namespace }}
+data:
+  .dockerconfigjson: {{ include "fraeym.dockerconfig" . }}
+{{- end }}
