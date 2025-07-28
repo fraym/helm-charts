@@ -565,6 +565,51 @@ entries:
     version: 0.1.1
   fraeym:
   - apiVersion: v2
+    created: "2025-07-28T15:33:41.459360821Z"
+    dependencies:
+    - alias: auth
+      condition: auth.create
+      name: auth
+      repository: file://../auth
+      version: 0.1.15
+    - alias: crud
+      condition: crud.create
+      name: crud
+      repository: file://../crud
+      version: 0.1.22
+    - alias: deployments
+      condition: deployments.create
+      name: deployments
+      repository: file://../deployments
+      version: 0.1.16
+    - alias: projections
+      condition: projections.create
+      name: projections
+      repository: file://../projections
+      version: 0.1.23
+    - alias: streams
+      condition: streams.create
+      name: streams
+      repository: file://../streams
+      version: 0.1.14
+    - alias: sync
+      condition: sync.create
+      name: sync
+      repository: file://../sync
+      version: 0.1.9
+    - alias: imgproxy
+      condition: imgproxy.create
+      name: imgproxy
+      repository: https://helm.imgproxy.net/
+      version: 0.8.34
+    description: 'Fraeym: All Freaym services in one chart'
+    digest: 95c4f44985af5778ee27ae5da47614e7a86be32fbdb9561e0d3b04b4e8635141
+    name: fraeym
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/fraeym-0.2.3/fraeym-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
     created: "2025-07-28T13:57:16.288584092Z"
     dependencies:
     - alias: auth
@@ -655,6 +700,16 @@ entries:
     - https://github.com/fraym/helm-charts/releases/download/fraeym-0.2.1/fraeym-0.2.1.tgz
     version: 0.2.1
   projections:
+  - apiVersion: v2
+    appVersion: 0.36.1
+    created: "2025-07-28T15:33:41.628124761Z"
+    description: 'Fraeym Projections: Projections for event sourced applications'
+    digest: 902051cde69f4286bacbe881ff3264cd7a0ac121cf92969e7ce62984f0e119f7
+    name: projections
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/projections-0.1.23/projections-0.1.23.tgz
+    version: 0.1.23
   - apiVersion: v2
     appVersion: 0.36.1
     created: "2025-07-28T11:07:44.166168025Z"
@@ -1117,4 +1172,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-28T13:57:16.288791339Z"
+generated: "2025-07-28T15:33:41.628548217Z"
