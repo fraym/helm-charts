@@ -67,4 +67,4 @@ spec:
               cpu: {{ .Values.resources.limits.cpu }}
               {{- end }}
       imagePullSecrets:
-        - name: regcred
+        - name: fraeym-ghcr-cred

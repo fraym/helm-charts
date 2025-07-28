@@ -57,5 +57,5 @@ imgproxy:
         cpu: 50m
         memory: 150Mi
 
-regcred:
+ghcr:
   create: false

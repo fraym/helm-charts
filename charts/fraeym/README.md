@@ -207,15 +207,15 @@ You can configure the name of the secrets by setting the `secretName` object.
 You can use the full configuration available for the [imgproxy chart](https://github.com/imgproxy/imgproxy-helm). Just prefix every value by `imgproxy`.
 Example: `logging.level` becomes `imgproxy.logging.level`.
 
-### Regcred Configuration
+### GitHub Container Registry Configuration
 
 This is used to pull the Fraeym images from the GitHub container registry.
 
-| Parameter         | Description     | Default |
-| ----------------- | --------------- | ------- |
-| `regcred.create`  | Enable regcred  | `false` |
-| `github.username` | GitHub username |         |
-| `github.token`    | GitHub token    |         |
+| Parameter       | Description                      | Default |
+| --------------- | -------------------------------- | ------- |
+| `ghcr.create`   | Enable GitHub Container Registry | `false` |
+| `ghcr.username` | GitHub username                  |         |
+| `ghcr.token`    | GitHub token                     |         |
 
 ## Usage
 
