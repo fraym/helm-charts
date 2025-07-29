@@ -2,7 +2,7 @@ apiVersion: v2
 name: fraeym
 description: "Fraeym: All Freaym services in one chart"
 type: application
-version: 0.2.4 # Chart version
+version: 0.2.5 # Chart version
 dependencies:
   - name: auth
     alias: auth
@@ -12,7 +12,7 @@ dependencies:
   - name: crud
     alias: crud
     condition: crud.create
-    version: 0.1.23
+    version: 0.1.24
     repository: file://../crud
   - name: deployments
     alias: deployments
@@ -22,7 +22,7 @@ dependencies:
   - name: projections
     alias: projections
     condition: projections.create
-    version: 0.1.24
+    version: 0.1.25
     repository: file://../projections
   - name: streams
     alias: streams

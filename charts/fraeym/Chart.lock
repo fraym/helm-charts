@@ -4,13 +4,13 @@ dependencies:
   version: 0.1.16
 - name: crud
   repository: file://../crud
-  version: 0.1.23
+  version: 0.1.24
 - name: deployments
   repository: file://../deployments
   version: 0.1.17
 - name: projections
   repository: file://../projections
-  version: 0.1.24
+  version: 0.1.25
 - name: streams
   repository: file://../streams
   version: 0.1.15
@@ -20,5 +20,5 @@ dependencies:
 - name: imgproxy
   repository: https://helm.imgproxy.net/
   version: 0.8.34
-digest: sha256:6b61b617e0bfcdf517022ab55a221f4759fbfcbabc5c5ddb3272877cfee54077
-generated: "2025-07-28T17:58:42.70168+02:00"
+digest: sha256:3c79ccf0e94e28202423c0973ac457f577eb01270206469515806a2d7039167a
+generated: "2025-07-29T09:29:28.314686+02:00"
