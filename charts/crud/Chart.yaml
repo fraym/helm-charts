@@ -2,5 +2,5 @@ apiVersion: v2
 name: crud
 description: "Fraeym CRUD: Easily create a CRUD API for your data"
 type: application
-version: 0.1.24 # Chart version
+version: 0.1.25 # Chart version
 appVersion: "0.33.2" # Fraeym CRUD version
