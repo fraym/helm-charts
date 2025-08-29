@@ -20,3 +20,7 @@ data:
 
     STREAMS_CLIENT_ADDRESS=streams.{{ .Release.Namespace }}.svc.cluster.local:9000
     STREAMS_CLIENT_GROUP_ID=projections
+
+    {{- if .Values.overrides }}
+    OVERRIDES_CONFIG_FILE=overrides.yaml
+    {{- end }}
