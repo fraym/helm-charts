@@ -665,6 +665,51 @@ entries:
     version: 0.1.1
   fraeym:
   - apiVersion: v2
+    created: "2025-09-03T10:10:19.000435891Z"
+    dependencies:
+    - alias: auth
+      condition: auth.create
+      name: auth
+      repository: file://../auth
+      version: 0.1.18
+    - alias: crud
+      condition: crud.create
+      name: crud
+      repository: file://../crud
+      version: 0.1.25
+    - alias: deployments
+      condition: deployments.create
+      name: deployments
+      repository: file://../deployments
+      version: 0.1.20
+    - alias: projections
+      condition: projections.create
+      name: projections
+      repository: file://../projections
+      version: 0.1.29
+    - alias: streams
+      condition: streams.create
+      name: streams
+      repository: file://../streams
+      version: 0.1.17
+    - alias: sync
+      condition: sync.create
+      name: sync
+      repository: file://../sync
+      version: 0.1.11
+    - alias: imgproxy
+      condition: imgproxy.create
+      name: imgproxy
+      repository: https://helm.imgproxy.net/
+      version: 0.8.34
+    description: 'Fraeym: All Freaym services in one chart'
+    digest: 2bb9902bea0e39054c3dc31ccee9e0e23450a0d7e9a20b99ad417e4fe70d313e
+    name: fraeym
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/fraeym-0.2.11/fraeym-0.2.11.tgz
+    version: 0.2.11
+  - apiVersion: v2
     created: "2025-08-29T11:02:19.14613718Z"
     dependencies:
     - alias: auth
@@ -1387,6 +1432,16 @@ entries:
     version: 0.1.1
   streams:
   - apiVersion: v2
+    appVersion: 6.4.1
+    created: "2025-09-03T10:10:19.122187168Z"
+    description: 'Fraeym Streams: event sourcing and pub/sub'
+    digest: 4a5689e7756e8d16e04c19e98728f85f2c70fd3c229ef42fd3ca5ab3afaa4eb2
+    name: streams
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/streams-0.1.17/streams-0.1.17.tgz
+    version: 0.1.17
+  - apiVersion: v2
     appVersion: 6.4.0
     created: "2025-08-18T08:29:47.071335684Z"
     description: 'Fraeym Streams: event sourcing and pub/sub'
@@ -1677,4 +1732,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-29T11:02:19.278403708Z"
+generated: "2025-09-03T10:10:19.122581451Z"
