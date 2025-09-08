@@ -27,3 +27,5 @@ To update the dependencies in the fraeym chart, run:
     make sync
 
 Please make sure to install [yq](https://github.com/mikefarah/yq?tab=readme-ov-file#install) before you run it.
+
+Do not forget to update the `appVersion` in the `Chart.yaml` files and the `version` in the `values.yaml` files of the charts you have updated (including the fraeym chart).
