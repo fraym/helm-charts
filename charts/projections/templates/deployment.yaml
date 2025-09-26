@@ -52,6 +52,10 @@ spec:
                 name: {{ .Values.secretName.auth }}
             - secretRef:
                 name: {{ .Values.secretName.postgres }}
+            {{- if .Values.typesense.enabled }}
+            - secretRef:
+                name: {{ .Values.secretName.typesense }}
+            {{- end }}
           ports:
             - containerPort: 3000
             - containerPort: 3001

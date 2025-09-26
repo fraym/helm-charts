@@ -37,6 +37,18 @@ data:
   POSTGRES_CONNECTION: {{ .Values.postgres.connection | b64enc }}
 ```
 
+The following secret is required when typesense is enabled.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-typesense-config
+  namespace: {{ .Release.Namespace }}
+data:
+  TYPESENSE_API_KEY: {{ .Values.typesense.apiKey | b64enc }}
+```
+
 ### Required Cluster Role
 
 ```yaml
@@ -74,6 +86,8 @@ The following table lists the configurable parameters of the projections chart a
 | `replicas`            | Number of replicas                          | `2`           |
 | `autoscaling.enabled` | Enable horizontal pod autoscaling           | `true`        |
 | `appEnv`              | Application environment                     | `development` |
+| `typesense.enabled`   | Enable typesense                            | `false`       |
+| `typesense.serverUrl` | Typesense server URL                        |               |
 
 ### Resource Configuration
 
@@ -88,10 +102,11 @@ The following table lists the configurable parameters of the projections chart a
 
 You can configure the name of the secrets by setting the `secretName` object.
 
-| Parameter             | Description                 | Default                  |
-| --------------------- | --------------------------- | ------------------------ |
-| `secretName.auth`     | Name of the auth secret     | `fraeym-auth-config`     |
-| `secretName.postgres` | Name of the postgres secret | `fraeym-postgres-config` |
+| Parameter              | Description                  | Default                   |
+| ---------------------- | ---------------------------- | ------------------------- |
+| `secretName.auth`      | Name of the auth secret      | `fraeym-auth-config`      |
+| `secretName.postgres`  | Name of the postgres secret  | `fraeym-postgres-config`  |
+| `secretName.typesense` | Name of the typesense secret | `fraeym-typesense-config` |
 
 ## Usage
 
