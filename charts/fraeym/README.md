@@ -60,6 +60,18 @@ data:
   S3_SECRET_KEY: {{ .Values.s3.secretAccessKey | b64enc }}
 ```
 
+The following secret is required when typesense is enabled.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: fraeym-typesense-config
+  namespace: {{ .Release.Namespace }}
+data:
+  TYPESENSE_API_KEY: {{ .Values.typesense.apiKey | b64enc }}
+```
+
 ### Required Cluster Role
 
 ```yaml
@@ -115,6 +127,13 @@ The following table lists the configurable parameters of the fraeym chart and th
 | `auth.debug`           | Enable debug mode (development environment) | `false`       |
 | `auth.appEnv`          | Application environment                     | `development` |
 | `auth.replicas`        | Number of replicas                          | `2`           |
+
+### Typesense Configuration
+
+| Parameter                         | Description          | Default |
+| --------------------------------- | -------------------- | ------- |
+| `projections.typesense.enabled`   | Enable typesense     | `false` |
+| `projections.typesense.serverUrl` | Typesense server URL |         |
 
 ### S3 Configuration
 
