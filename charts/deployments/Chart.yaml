@@ -2,5 +2,5 @@ apiVersion: v2
 name: deployments
 description: "Fraeym Deployments: Schema Deployments for Fraeym"
 type: application
-version: 0.2.2 # Chart version
-appVersion: "0.27.2" # Fraeym Deployments version
+version: 0.2.3 # Chart version
+appVersion: "0.28.0" # Fraeym Deployments version
