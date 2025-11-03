@@ -7,10 +7,10 @@ dependencies:
   version: 0.2.0
 - name: deployments
   repository: file://../deployments
-  version: 0.2.3
+  version: 0.2.4
 - name: projections
   repository: file://../projections
-  version: 0.2.8
+  version: 0.2.9
 - name: streams
   repository: file://../streams
   version: 0.2.0
@@ -20,5 +20,5 @@ dependencies:
 - name: imgproxy
   repository: https://helm.imgproxy.net/
   version: 0.8.34
-digest: sha256:d0789fadcef7dd4badeeb834dbbd67bd8f43aaf38308154cd6bd881c4e9b77c5
-generated: "2025-11-03T08:54:27.832124+01:00"
+digest: sha256:86f21f8bfb32e75eee8c21742f1a150fa00cc976c0a3e939abe82e55483b2c62
+generated: "2025-11-03T14:28:03.341893+01:00"
