@@ -2,5 +2,5 @@ apiVersion: v2
 name: streams
 description: "Fraeym Streams: event sourcing and pub/sub"
 type: application
-version: 0.2.0 # Chart version
-appVersion: "6.6.3" # Fraeym Streams version
+version: 0.2.1 # Chart version
+appVersion: "6.6.4" # Fraeym Streams version

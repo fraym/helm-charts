@@ -13,12 +13,12 @@ dependencies:
   version: 0.2.10
 - name: streams
   repository: file://../streams
-  version: 0.2.0
+  version: 0.2.1
 - name: sync
   repository: file://../sync
   version: 0.1.11
 - name: imgproxy
   repository: https://helm.imgproxy.net/
   version: 0.8.34
-digest: sha256:7f7a97231af791eae2380b43b225bf5aa7d3652c4948788e06a07e5844f1884d
-generated: "2025-11-06T11:09:08.053791+01:00"
+digest: sha256:d9919f7b8c448ab468d347af900b473b5c7e2ddfc181f088ee6f2cafc47a3f1b
+generated: "2025-11-12T16:00:20.718126+01:00"
