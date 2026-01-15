@@ -1,5 +1,5 @@
-image: ghcr.io/fraym/crud
-version: 0.35.2
+image: ghcr.io/fraym/fraeym/crud
+version: 1.0.0-alpha.2
 debug: false
 replicas: 2
 
