@@ -18,3 +18,5 @@ data:
     AUTH_CLIENT_ADDRESS=auth.{{ .Release.Namespace }}.svc.cluster.local:9000
     CRUD_CLIENT_ADDRESS=crud.{{ .Release.Namespace }}.svc.cluster.local:9000
     PROJECTIONS_CLIENT_ADDRESS=projections.{{ .Release.Namespace }}.svc.cluster.local:9000
+    SYNC_CLIENT_ADDRESS=sync.{{ .Release.Namespace }}.svc.cluster.local:9000
+    SYNC_CLIENT_APP_PREFIX=deployments
