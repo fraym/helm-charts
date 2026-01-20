@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   auth:
   - apiVersion: v2
+    appVersion: 1.0.0-alpha.7
+    created: "2026-01-20T15:03:33.22825548Z"
+    description: 'Fraeym Auth: Authentication and Authorization'
+    digest: 3a0b093ddffaaa2f31e1426e2697d67f804af92ad701799931b8745eb1f7c190
+    name: auth
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/auth-1.0.0-alpha.7/auth-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
+  - apiVersion: v2
     appVersion: 1.0.0-alpha.6
     created: "2026-01-20T14:15:57.76630517Z"
     description: 'Fraeym Auth: Authentication and Authorization'
@@ -262,6 +272,16 @@ entries:
     - https://github.com/fraym/helm-charts/releases/download/auth-0.1.0/auth-0.1.0.tgz
     version: 0.1.0
   crud:
+  - apiVersion: v2
+    appVersion: 1.0.0-alpha.7
+    created: "2026-01-20T15:03:33.415708705Z"
+    description: 'Fraeym CRUD: Easily create a CRUD API for your data'
+    digest: 501defbe6e5a08c26d15c1769fce261b4761217340362e2eda5c6749eab80b64
+    name: crud
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/crud-1.0.0-alpha.7/crud-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
   - apiVersion: v2
     appVersion: 1.0.0-alpha.6
     created: "2026-01-20T14:15:58.024848774Z"
@@ -604,6 +624,16 @@ entries:
     version: 0.1.1
   deployments:
   - apiVersion: v2
+    appVersion: 1.0.0-alpha.7
+    created: "2026-01-20T15:03:33.598335918Z"
+    description: 'Fraeym Deployments: Schema Deployments for Fraeym'
+    digest: 85a9db352648e7f020cd57e1f13e0c69cf110f995bb5e1fb92fda2df87b21519
+    name: deployments
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/deployments-1.0.0-alpha.7/deployments-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
+  - apiVersion: v2
     appVersion: 1.0.0-alpha.6
     created: "2026-01-20T14:15:58.328349235Z"
     description: 'Fraeym Deployments: Schema Deployments for Fraeym'
@@ -944,6 +974,51 @@ entries:
     - https://github.com/fraym/helm-charts/releases/download/deployments-0.1.1/deployments-0.1.1.tgz
     version: 0.1.1
   fraeym:
+  - apiVersion: v2
+    created: "2026-01-20T15:03:33.775787659Z"
+    dependencies:
+    - alias: auth
+      condition: auth.create
+      name: auth
+      repository: file://../auth
+      version: 1.0.0-alpha.7
+    - alias: crud
+      condition: crud.create
+      name: crud
+      repository: file://../crud
+      version: 1.0.0-alpha.7
+    - alias: deployments
+      condition: deployments.create
+      name: deployments
+      repository: file://../deployments
+      version: 1.0.0-alpha.7
+    - alias: projections
+      condition: projections.create
+      name: projections
+      repository: file://../projections
+      version: 1.0.0-alpha.7
+    - alias: streams
+      condition: streams.create
+      name: streams
+      repository: file://../streams
+      version: 1.0.0-alpha.7
+    - alias: sync
+      condition: sync.create
+      name: sync
+      repository: file://../sync
+      version: 1.0.0-alpha.7
+    - alias: imgproxy
+      condition: imgproxy.create
+      name: imgproxy
+      repository: https://helm.imgproxy.net/
+      version: 0.8.34
+    description: 'Fraeym: All Freaym services in one chart'
+    digest: 0102a98654073c3588d8a4397a23aef19127b160b221e45b4aec60c845e23569
+    name: fraeym
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/fraeym-1.0.0-alpha.7/fraeym-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
   - apiVersion: v2
     created: "2026-01-20T14:15:58.528348047Z"
     dependencies:
@@ -2566,6 +2641,16 @@ entries:
     version: 0.2.1
   projections:
   - apiVersion: v2
+    appVersion: 1.0.0-alpha.7
+    created: "2026-01-20T15:03:34.457487573Z"
+    description: 'Fraeym Projections: Projections for event sourced applications'
+    digest: d5765e390458d6529048883a4bdccad2c7710ceeaec06342d93dbab1e121872c
+    name: projections
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/projections-1.0.0-alpha.7/projections-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
+  - apiVersion: v2
     appVersion: 1.0.0-alpha.6
     created: "2026-01-20T14:15:58.728971614Z"
     description: 'Fraeym Projections: Projections for event sourced applications'
@@ -3037,6 +3122,16 @@ entries:
     version: 0.1.1
   streams:
   - apiVersion: v2
+    appVersion: 1.0.0-alpha.7
+    created: "2026-01-20T15:03:34.64782331Z"
+    description: 'Fraeym Streams: event sourcing and pub/sub'
+    digest: 295847c1973ca805ae56ae6cb2c088b9930c406e9f018b8c1712b9be8902cb8f
+    name: streams
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/streams-1.0.0-alpha.7/streams-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
+  - apiVersion: v2
     appVersion: 1.0.0-alpha.6
     created: "2026-01-20T14:15:58.985597212Z"
     description: 'Fraeym Streams: event sourcing and pub/sub'
@@ -3308,6 +3403,16 @@ entries:
     version: 0.1.0
   sync:
   - apiVersion: v2
+    appVersion: 1.0.0-alpha.7
+    created: "2026-01-20T15:03:34.873637318Z"
+    description: 'Fraeym Sync: locking for distributed services'
+    digest: 0d79e585cf7cbed59f9d25819b0b226c6b83b7df410a5ccee69db0a75a107af2
+    name: sync
+    type: application
+    urls:
+    - https://github.com/fraym/helm-charts/releases/download/sync-1.0.0-alpha.7/sync-1.0.0-alpha.7.tgz
+    version: 1.0.0-alpha.7
+  - apiVersion: v2
     appVersion: 1.0.0-alpha.6
     created: "2026-01-20T14:15:59.222116067Z"
     description: 'Fraeym Sync: locking for distributed services'
@@ -3487,4 +3592,4 @@ entries:
     urls:
     - https://github.com/fraym/helm-charts/releases/download/sync-0.1.0/sync-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-20T14:15:59.223471253Z"
+generated: "2026-01-20T15:03:34.875274579Z"
