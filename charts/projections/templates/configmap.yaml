@@ -21,9 +21,9 @@ data:
     STREAMS_CLIENT_ADDRESS=streams.{{ .Release.Namespace }}.svc.cluster.local:9000
     STREAMS_CLIENT_GROUP_ID=projections
 
-    {{- if .Values.typesense.enabled }}
-    TYPESENSE_ENABLED=true
-    TYPESENSE_SERVER_URL={{ .Values.typesense.serverUrl }}
+    {{- if .Values.search.enabled }}
+    SEARCH_ENABLED=true
+    SEARCH_SERVER_URL={{ .Values.search.serverUrl }}
     {{- end }}
 
     {{- if .Values.overrides }}

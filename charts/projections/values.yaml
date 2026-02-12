@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/fraeym/projections
-version: 1.0.0-alpha.21
+version: 1.0.0-alpha.22
 replicas: 2
 debug: false
 
@@ -20,5 +20,9 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 100
 
-typesense:
+search:
   enabled: false
+  tls:
+    secret:
+      name: elasticsearch-es-http-ca-internal
+      key: tls.crt

@@ -36,6 +36,14 @@ spec:
           secret:
             secretName: fraeym-projections-overrides
         {{- end }}
+        {{- if .Values.search.enabled }}
+        - name: elastic-ca
+          secret:
+            secretName: {{ .Values.search.tls.secret.name }}
+            items:
+              - key: {{ .Values.search.tls.secret.key }}
+                path: elastic-tls.crt
+        {{- end }}
       initContainers:
         - name: wait-for-dependencies
           image: ghcr.io/groundnuty/k8s-wait-for:v1.6
@@ -52,9 +60,9 @@ spec:
                 name: {{ .Values.secretName.auth }}
             - secretRef:
                 name: {{ .Values.secretName.postgres }}
-            {{- if .Values.typesense.enabled }}
+            {{- if .Values.search.enabled }}
             - secretRef:
-                name: {{ .Values.secretName.typesense }}
+                name: {{ .Values.secretName.search }}
             {{- end }}
           ports:
             - containerPort: 3000
@@ -82,6 +90,12 @@ spec:
             - name: overrides
               mountPath: /overrides.yaml
               subPath: overrides.yaml
+              readOnly: true
+            {{- end }}
+            {{- if .Values.search.enabled }}
+            - name: elastic-ca
+              mountPath: /elastic-tls.crt
+              subPath: elastic-tls.crt
               readOnly: true
             {{- end }}
           resources:
