@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/fraeym/projections
-version: 1.0.0-alpha.22
+version: 1.0.0-alpha.23
 replicas: 2
 debug: false
 
@@ -13,7 +13,7 @@ resources:
 secretName:
   auth: fraeym-auth-config
   postgres: fraeym-postgres-config
-  typesense: fraeym-typesense-config
+  search: fraeym-search-config
 
 autoscaling:
   enabled: true
