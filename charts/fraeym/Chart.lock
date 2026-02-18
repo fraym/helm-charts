@@ -1,24 +1,24 @@
 dependencies:
 - name: auth
   repository: file://../auth
-  version: 1.0.0-alpha.23
+  version: 1.0.0
 - name: crud
   repository: file://../crud
-  version: 1.0.0-alpha.23
+  version: 1.0.0
 - name: deployments
   repository: file://../deployments
-  version: 1.0.0-alpha.23
+  version: 1.0.0
 - name: projections
   repository: file://../projections
-  version: 1.0.0-alpha.23
+  version: 1.0.0
 - name: streams
   repository: file://../streams
-  version: 1.0.0-alpha.23
+  version: 1.0.0
 - name: sync
   repository: file://../sync
-  version: 1.0.0-alpha.23
+  version: 1.0.0
 - name: imgproxy
   repository: https://helm.imgproxy.net/
   version: 0.8.34
-digest: sha256:4b64d914b12f8f9c1129910105539f086eaefb6c66e83a5fed2e2564fdf54731
-generated: "2026-02-17T14:39:37.663714+01:00"
+digest: sha256:fcfbcbb5d48b9166838da53f097dbcfc310b9177cd9af1a60d7995eac85151fd
+generated: "2026-02-18T10:57:10.699793+01:00"
