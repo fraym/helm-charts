@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/fraeym/deployments
-version: 1.0.6
+version: 1.0.7
 debug: false
 
 resources:
