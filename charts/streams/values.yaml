@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/fraeym/streams
-version: 1.0.7
+version: 1.0.8
 replicas: 2
 debug: false
 
