@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/fraeym/projections
-version: 1.0.16
+version: 1.0.17
 replicas: 2
 debug: false
 
