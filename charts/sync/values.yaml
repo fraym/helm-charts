@@ -1,5 +1,5 @@
 image: ghcr.io/fraym/fraeym/sync
-version: 1.0.25
+version: 1.0.26
 debug: false
 
 resources:
