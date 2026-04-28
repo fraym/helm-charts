@@ -44,6 +44,8 @@ spec:
                 name: {{ .Values.secretName.auth }}
             - secretRef:
                 name: {{ .Values.secretName.postgres }}
+            - secretRef:
+                name: {{ .Values.secretName.streams }}
           ports:
             - containerPort: 3000
             - containerPort: 3001

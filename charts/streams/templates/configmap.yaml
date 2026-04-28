@@ -17,3 +17,14 @@ data:
     
     SYNC_CLIENT_ADDRESS=sync.{{ .Release.Namespace }}.svc.cluster.local:9000
     SYNC_CLIENT_APP_PREFIX=streams
+
+    {{- if .Values.archive }}
+    STREAMS_ARCHIVE=true
+    STREAMS_ARCHIVE_SIZE={{ .Values.archive.size }}
+    STREAMS_ARCHIVE_OLDER_THAN_DAYS={{ .Values.archive.olderThanDays }}
+    S3_BUCKET={{ .Values.s3.bucket }}
+    S3_ENDPOINT={{ .Values.s3.endpoint }}
+    S3_SSL={{ .Values.s3.ssl }}
+    {{- else }}
+    STREAMS_ARCHIVE=false
+    {{- end }}

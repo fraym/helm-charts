@@ -13,6 +13,7 @@ resources:
 secretName:
   auth: fraeym-auth-config
   postgres: fraeym-postgres-config
+  streams: fraeym-streams-config
 
 autoscaling:
   enabled: true
